@@ -1,0 +1,66 @@
+{
+  "resources": [
+    {
+      "keywords": [
+        "python"
+      ],
+      "title": "Python Tutorial",
+      "provider": "Python Software Foundation",
+      "url": "https://docs.python.org/3/tutorial/",
+      "cost": "Free",
+      "description": "Official Python language tutorial."
+    },
+    {
+      "keywords": [
+        "sql"
+      ],
+      "title": "SQL learning resources",
+      "provider": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/browse/?terms=SQL",
+      "cost": "Free",
+      "description": "SQL learning modules and documentation."
+    },
+    {
+      "keywords": [
+        "excel",
+        "microsoft excel"
+      ],
+      "title": "Excel training",
+      "provider": "Microsoft Learn",
+      "url": "https://support.microsoft.com/en-us/excel",
+      "cost": "Free",
+      "description": "Official Excel help and training resources."
+    },
+    {
+      "keywords": [
+        "power bi"
+      ],
+      "title": "Power BI learning paths",
+      "provider": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi/",
+      "cost": "Free",
+      "description": "Official Power BI learning paths."
+    },
+    {
+      "keywords": [
+        "tableau"
+      ],
+      "title": "Tableau learning",
+      "provider": "Tableau",
+      "url": "https://www.tableau.com/learn/training",
+      "cost": "Free digital training options available",
+      "description": "Official Tableau training resources."
+    },
+    {
+      "keywords": [
+        "mathematics",
+        "statistics"
+      ],
+      "title": "Khan Academy",
+      "provider": "Khan Academy",
+      "url": "https://www.khanacademy.org/math",
+      "cost": "Free",
+      "description": "Free mathematics and statistics lessons."
+    }
+  ]
+}
