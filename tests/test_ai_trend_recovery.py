@@ -4,6 +4,10 @@ import tempfile
 import time
 import unittest
 from pathlib import Path
+
+# Make the project's src/ modules importable when tests run via unittest discovery.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from unittest.mock import Mock, patch
 
 import requests
