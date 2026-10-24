@@ -1,0 +1,127 @@
+{
+  "label": "Interpretive career and skill contribution mappings",
+  "careers": {
+    "Business Intelligence Analysts": [
+      {
+        "number": 8,
+        "title": "Decent Work and Economic Growth",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal8"
+      }
+    ],
+    "Data Scientists": [
+      {
+        "number": 9,
+        "title": "Industry, Innovation and Infrastructure",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal9"
+      }
+    ],
+    "Statisticians": [
+      {
+        "number": 4,
+        "title": "Quality Education",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal4"
+      }
+    ],
+    "Actuaries": [
+      {
+        "number": 12,
+        "title": "Responsible Consumption and Production",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal12"
+      }
+    ],
+    "Economists": [
+      {
+        "number": 8,
+        "title": "Decent Work and Economic Growth",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal8"
+      }
+    ],
+    "Market Research Analysts and Marketing Specialists": [
+      {
+        "number": 9,
+        "title": "Industry, Innovation and Infrastructure",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal9"
+      }
+    ],
+    "Accountants and Auditors": [
+      {
+        "number": 4,
+        "title": "Quality Education",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal4"
+      }
+    ],
+    "Management Analysts": [
+      {
+        "number": 12,
+        "title": "Responsible Consumption and Production",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal12"
+      }
+    ],
+    "Financial Quantitative Analysts": [
+      {
+        "number": 8,
+        "title": "Decent Work and Economic Growth",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal8"
+      }
+    ],
+    "Loan Officers": [
+      {
+        "number": 9,
+        "title": "Industry, Innovation and Infrastructure",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal9"
+      }
+    ],
+    "Financial Examiners": [
+      {
+        "number": 4,
+        "title": "Quality Education",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal4"
+      }
+    ]
+  },
+  "skill_categories": {
+    "essential": [
+      {
+        "number": 4,
+        "title": "Quality Education",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal4"
+      }
+    ],
+    "transferable": [
+      {
+        "number": 8,
+        "title": "Decent Work and Economic Growth",
+        "rationale": "Role-specific skills can support readiness for productive work.",
+        "source_url": "https://sdgs.un.org/goals/goal8"
+      }
+    ],
+    "knowledge": [
+      {
+        "number": 9,
+        "title": "Industry, Innovation and Infrastructure",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal9"
+      }
+    ],
+    "technology": [
+      {
+        "number": 9,
+        "title": "Industry, Innovation and Infrastructure",
+        "rationale": "Applied data analysis can support productivity and evidence-informed decisions in organizations.",
+        "source_url": "https://sdgs.un.org/goals/goal9"
+      }
+    ]
+  }
+}
