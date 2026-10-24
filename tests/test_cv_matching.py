@@ -20,10 +20,30 @@ from i18n import CV_TERM_ALIASES, cv_term_aliases
 
 # Load the actual pure functions without executing the Streamlit UI or providers.
 tree = ast.parse(Path("src/app.py").read_text())
+# Execute the real pure matching helpers and their curated evidence tables,
+# without importing/running the Streamlit UI.
+helper_functions = {
+    "_normalise_cv_text", "_contains_cv_phrase", "_has_evidence",
+    "_contains_single_letter_tool", "_technology_cv_match",
+    "cv_contains_term", "detect_cv_items",
+}
+helper_constants = {
+    "CV_SKILL_EVIDENCE", "CV_KNOWLEDGE_EVIDENCE",
+    "CV_TECHNOLOGY_ALIASES",
+}
 functions = ast.Module(body=[
     node for node in tree.body
-    if isinstance(node, ast.FunctionDef)
-    and node.name in ("cv_contains_term", "detect_cv_items")
+    if (
+        isinstance(node, ast.FunctionDef) and node.name in helper_functions
+    ) or (
+        isinstance(node, ast.AnnAssign)
+        and isinstance(node.target, ast.Name)
+        and node.target.id in helper_constants
+    ) or (
+        isinstance(node, ast.Assign)
+        and any(isinstance(target, ast.Name) and target.id in helper_constants
+                for target in node.targets)
+    )
 ], type_ignores=[])
 namespace = {
     "re": re, "unicodedata": unicodedata, "cv_term_aliases": cv_term_aliases,
