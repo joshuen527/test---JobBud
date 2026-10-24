@@ -2,6 +2,10 @@ import ast
 import json
 import unittest
 from pathlib import Path
+
+# Make the project's src/ modules importable when tests run via unittest discovery.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from string import Formatter
 from unittest.mock import patch
 
@@ -29,7 +33,7 @@ class TranslationTests(unittest.TestCase):
                 self.assertEqual(fields(entry["en"]), fields(entry["zh"]))
 
     def test_all_app_translation_keys_exist(self):
-        tree = ast.parse(Path("app.py").read_text())
+        tree = ast.parse(Path("src/app.py").read_text())
         for node in ast.walk(tree):
             if (isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
                     and node.func.id in ("t", "tf") and node.args
@@ -68,7 +72,7 @@ class TranslationTests(unittest.TestCase):
                 patch.object(ai_explainer, "explain_recommendation", return_value={
                     "text": "Test explanation", "source": "RunPod",
                 }) as explain:
-            app = AppTest.from_file(str(Path("app.py").resolve()), default_timeout=30).run()
+            app = AppTest.from_file(str(Path("src/app.py").resolve()), default_timeout=30).run()
             self.assertFalse(app.exception)
             app.multiselect(key="selected_skills").set_value(["Mathematics", "Critical Thinking"]).run()
             app.multiselect(key="selected_knowledge").set_value(["Economics and Accounting"]).run()

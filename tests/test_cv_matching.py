@@ -5,6 +5,10 @@ import unicodedata
 import unittest
 from io import BytesIO
 from pathlib import Path
+
+# Make the project's src/ modules importable when tests run via unittest discovery.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from unittest.mock import patch
 
 import streamlit as st
@@ -15,7 +19,7 @@ from i18n import CV_TERM_ALIASES, cv_term_aliases
 
 
 # Load the actual pure functions without executing the Streamlit UI or providers.
-tree = ast.parse(Path("app.py").read_text())
+tree = ast.parse(Path("src/app.py").read_text())
 functions = ast.Module(body=[
     node for node in tree.body
     if isinstance(node, ast.FunctionDef)
@@ -93,7 +97,7 @@ class CVMatchingTests(unittest.TestCase):
         upload = BytesIO("Pemikiran Kritis; 数学; Python".encode("utf-8"))
         upload.name = "synthetic.txt"
         with patch.object(st, "file_uploader", return_value=upload):
-            app = AppTest.from_file(str(Path("app.py").resolve()), default_timeout=30).run()
+            app = AppTest.from_file(str(Path("src/app.py").resolve()), default_timeout=30).run()
             app.radio(key="intake_method").set_value("Upload CV").run()
             self.assertFalse(app.exception)
             self.assertEqual(app.multiselect(key="selected_skills").value,

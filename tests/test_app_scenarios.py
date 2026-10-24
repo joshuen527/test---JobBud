@@ -2,6 +2,10 @@
 import ast
 from copy import deepcopy
 from pathlib import Path
+
+# Make the project's src/ modules importable when tests run via unittest discovery.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import unittest
 from unittest.mock import patch
 
@@ -12,7 +16,7 @@ import gdelt_engine
 from i18n import t
 
 
-APP = Path(__file__).resolve().parents[1] / "app.py"
+APP = Path(__file__).resolve().parents[1] / "src" / "app.py"
 # Execute the production function without starting the UI or background loaders.
 tree = ast.parse(APP.read_text())
 namespace = {"get_role_ai_signal": gdelt_engine.get_role_ai_signal}

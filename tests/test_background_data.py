@@ -1,6 +1,10 @@
 import time
 import unittest
 from pathlib import Path
+
+# Make the project's src/ modules importable when tests run via unittest discovery.
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from threading import Event
 from unittest.mock import Mock, patch
 
@@ -81,7 +85,7 @@ class BackgroundLoadingTests(unittest.TestCase):
                     "text": "Completed explanation", "source": "RunPod",
                 }) as explain:
             try:
-                app = AppTest.from_file(str(Path("app.py").resolve()), default_timeout=8).run()
+                app = AppTest.from_file(str(Path("src/app.py").resolve()), default_timeout=8).run()
                 app.multiselect(key="selected_skills").set_value(["Mathematics", "Critical Thinking"]).run()
                 start = time.monotonic()
                 app.button[0].click().run()
